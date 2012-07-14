@@ -1,0 +1,26 @@
+<html>
+<head>
+<script src="/eureca.js"></script>
+</head>
+<body>
+<script>
+var eureca = new EURECA();
+var me = eureca.exports;
+me.foo = function(a) {alert('FOO() '+a);} 
+
+function serverAdd()
+{
+    var _a = parseInt(document.getElementById('a').value);
+    var _b = parseInt(document.getElementById('b').value);
+    //Call server side Add and show result
+    eureca.add(_a, _b, function(r) {alert('result='+r)});
+}
+
+
+</script>
+<div id="content">
+<input type="text" id="a" value="10"/>+<input type="text" id="b" value="15" /> = 
+<input type="button" id="btn" value="Server side Add()" onclick="serverAdd()" />
+</div>
+</body>
+</html>

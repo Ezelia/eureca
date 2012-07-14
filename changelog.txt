@@ -1,0 +1,4 @@
+0.1.0 : first public release
+ - support bidirectional server/client RPC
+ - callbacks
+ - auto-reconnect client

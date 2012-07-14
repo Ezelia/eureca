@@ -1,0 +1,31 @@
+{
+  "name": "eureca",
+  "description": "Nodejs remote procedure call built on top of sockjs",
+  "version": "0.1.0",
+  "author": {
+    "name": "Alaa-eddine KADDOURI"
+  },
+  "keywords": [
+    "RMI",
+    "RPC",
+    "sockjs",
+    "websocket",
+    "xhr",
+    "ajax",
+    "eureca",
+    "node"
+  ],
+  "homepage": "https://emaroc.info/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/alaa-eddine/eureca"
+  },
+  "dependencies": {
+    "sockjs": ">= 0.3.0"
+  },
+  "engines": {
+    "node": ">=0.4.0"
+  },
+  "main": "index.js",
+  "_id": "eureca@0.1.0"
+}
