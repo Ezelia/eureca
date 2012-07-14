@@ -12,10 +12,17 @@ var eureca  = require('../').EURECA,
 Server.add = function(a, b) {
         return a+b;
 };
-Server.echo = function(s, conn) {
+Server.echo = function(s) {
     console.log('received : ', s);
-    conn.write('>',s);
 };
+
+//the following callback allows us to track when echo() is called from a client, conn argument contains a reference to the connection instance
+Server.echo.onCall = function(conn, s) 
+{
+    conn.write('>'+s);
+    //we can use it to get client instance
+    //client = eureca.getClient(conn.id);
+}
 ///////////////////////////////////////////////////
 
 
