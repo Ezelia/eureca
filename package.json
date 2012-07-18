@@ -1,7 +1,7 @@
 {
   "name": "eureca",
   "description": "Nodejs remote procedure call built on top of sockjs",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "author": {
     "name": "Alaa-eddine KADDOURI"
   },
@@ -15,7 +15,7 @@
     "eureca",
     "node"
   ],
-  "homepage": "https://emaroc.info/",
+  "homepage": "http://emaroc.info/",
   "repository": {
     "type": "git",
     "url": "https://github.com/alaa-eddine/eureca"
