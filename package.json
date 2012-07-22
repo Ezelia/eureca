@@ -1,7 +1,7 @@
 {
   "name": "eureca",
   "description": "Nodejs remote procedure call built on top of sockjs",
-  "version": "0.1.21",
+  "version": "0.1.3",
   "author": {
     "name": "Alaa-eddine KADDOURI"
   },
@@ -21,11 +21,12 @@
     "url": "https://github.com/alaa-eddine/eureca"
   },
   "dependencies": {
-    "sockjs": ">= 0.3.0"
+    "sockjs": ">= 0.3.0",
+    "sockjs-client": "0.1.3"
   },
   "engines": {
     "node": ">=0.4.0"
   },
   "main": "index.js",
-  "_id": "eureca@0.1.21"
+  "_id": "eureca@0.1.3"
 }
