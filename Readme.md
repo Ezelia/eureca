@@ -26,50 +26,56 @@ usage example
 
 ### Server side
 
+```js
+var EURECA  = require('eureca').EURECA;
 
-    var eureca  = require('eureca').EURECA,
-    Server = eureca.exports;  //all functions declared in this namespace will be availbale to clients
+//the allow parameter define witch function names are accepted in the client side.
+//the configuration bellow will unable server to call foo() and bar() ine the client side if the client define them
+var eureca = new EURECA({allow : ['foo', 'bar']});
+Server = eureca.exports;  //all functions declared in this namespace will be availbale to clients
 
-    //EURECA Server side functions exposed to clients
-    Server.add = function(a, b) {
-        return a+b;
-    };
-    ///////////////////////////////////////////////////
+//EURECA Server side functions exposed to clients
+Server.add = function(a, b) {
+return a+b;
+};
+///////////////////////////////////////////////////
 
 
-    //the allow parameter define witch function names are accepted in the client side.
-    //the configuration bellow will unable server to call foo() and bar() ine the client side if the client define them
-    eureca.install(app, {allow : ['foo', 'bar']});
+eureca.install(app);
 
+```
 
 
 ### client side
 
-    <html>
-    <head>
-	<script src="/eureca.js"></script>
-    </head>
-    <body>
-    <script>
-        var eureca = new EURECA();  
-	var me = eureca.exports;   //function defined inside this namespace can be called from server if they are allowed 
+```html
+<html>
+  <head>
+    <script src="/eureca.js"></script>
+  </head>
+<body>
+<script>
+ var eureca = new EURECA();  
+ var me = eureca.exports;   //function defined inside this namespace can be called from server if they are allowed 
 
 
-	me.foo = function(a) {   // the function foo() was allowed by server so it'll be available
-	    alert('FOO() '+a);
-	} 
-    </script>
-
+ me.foo = function(a) {   // the function foo() was allowed by server so it'll be available
+    alert('FOO() '+a);
+ } 
+</script>
+```
 
 ### Server side (Call client functin)
 
 since the client defined a function called foo() we can call it, but first we need to get the client instance
 the onConnect event provide a useful callback to handle incoming connections, we will use it to get the client instance and call foo()
 
+```js
     eureca.onConnect(function(conn) {
-	client = eureca.getClient(conn.id);
+    client = eureca.getClient(conn.id);
         client.foo(' From server');
     });
+```
 
 you can use the onConnect callback to keep track of your clients so you can use them later.
 
@@ -81,14 +87,17 @@ in the client side, the code is simpler, since we don't need to find the server 
 
 to call server side add function, all we have to do is 
 
+```js
     eureca.add(10, 20);  // eureca is an instance of EURECA()
-
+```
 
 we can add a callback function to get the result
 
+```js
     eureca.add(10, 20, function(result) {
-	console.log('the result is ', result);
+    console.log('the result is ', result);
     });
+```
 
 
 
