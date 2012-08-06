@@ -3,10 +3,15 @@ var http = require('http');
 
 
 var fs = require('fs');
-var eureca  = require('../').EURECA,
-    Server = eureca.exports,
+var EURECA  = require('../').EURECA,
     ELog = require('../').Logger; 
 
+
+// tell it that we allow clients to expose foo and bar functions
+// functions called foo or bar in the client side cann be called from server
+// note that if the client expose something else than foo and bar, they will be ignored.
+var eureca = new EURECA({allow : ['foo', 'bar']});
+var Server = eureca.exports;
 
 //EURECA Server side functions exposed to clients
 Server.add = function(a, b) {
@@ -31,10 +36,7 @@ var app = http.createServer();
 
 eureca.debuglevel=2; // 0=no debug, 1=standard debug, 2=full debug
 
-// Here install eureca and tell it that we allow clients to expose foo and bar functions
-// functions called foo or bar in the client side cann be called from server
-// note that if the client expose something else than foo and bar, they will be ignored.
-eureca.install(app, {allow : ['foo', 'bar']});
+eureca.install(app);
 
 
 //Call client foo() function when ready 
