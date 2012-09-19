@@ -1,7 +1,7 @@
 {
   "name": "eureca",
   "description": "Nodejs remote procedure call built on top of sockjs",
-  "version": "0.1.40",
+  "version": "0.1.41",
   "author": {
     "name": "Alaa-eddine KADDOURI"
   },
@@ -28,5 +28,5 @@
     "node": ">=0.6.0"
   },
   "main": "index.js",
-  "_id": "eureca@0.1.40"
+  "_id": "eureca@0.1.41"
 }
