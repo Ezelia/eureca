@@ -1,3 +1,4 @@
+[![build status](https://secure.travis-ci.org/alaa-eddine/eureca.png)](http://travis-ci.org/alaa-eddine/eureca)
 eureca
 ======
 
