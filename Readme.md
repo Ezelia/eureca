@@ -1,3 +1,15 @@
+eureca becomes eureca.io !
+==========================
+Please use [**eureca.io**](https://github.com/Ezelia/eureca.io) instead of eureca,
+
+[**eureca.io**](https://github.com/Ezelia/eureca.io) is a more advanced version providing better features and cleaner code.
+
+
+eureca repository is preserved here for reference, or if you are not yet ready to move to eureca.io
+
+
+
+-------------------------------------------------------------------------------------------------------
 eureca
 ======
 
